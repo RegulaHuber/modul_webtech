@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+/* SCHRIFTBLÖCKE */
+
+p {
+    font-family: "Roboto";
+    font-weight: 600;
+    font-size: 104px;
+    transform: translate(0px, 22px);
+}
+
+.textSmall {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 20px;
+    text-align: left;
+}
+
+.fontLight {
+    font-weight: 400;
+}
+
+/* TEXTAUSRICHTUNG */
+
+.textInBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerTextInBox {
+    align-items: center;
+    padding: 20px 20px 20px 15px;
+}
+
+/* HYPERLINK */
+
+a {
+    color: black;
+    text-decoration: none;
+    /* no underline */
+}
+
+/* HAUPTCONTAINER */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-template-rows: repeat(60, 1fr);
+    gap: 10px;
+    width: 8000px;
+    height: 8000px;
+
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: ease all .5s;
+    /*sanfter Übergang von Desktop zu Mobile*/
+
+
+    animation-name: "hintergrund";
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes hintergrund {
+    0% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: white;
+    }
+
+}
+
+/* FARBEN */
+
+.yellow {
+    background-color: yellow;
+}
+
+.white {
+}
+
+.pink {
+    background-color: #d52c77;
+}
+
+.pink:nth-of-type(3n) {
+    opacity: 0;
+}
+
+.black:nth-of-type(2n) {
+    opacity: 0;
+}
+
+.cyan:nth-of-type(4n) {
+    opacity: 0;
+}
+
+/*Rhytmus / NEGATIV-Version erstellen*/
+
+.cyan {
+    background-color: #55c5a9;
+}
+
+.black {
+    background-color: #000;
+}
+
+/* ZELLEN GRÖSSEN */
+
+.small {
+    grid-column: span 1;
+}
+
+.medium {
+    grid-column: span 2;
+}
+
+.large {
+    grid-column: span 3;
+}
+
+/* ZELLEN HOVER AUF WEISS */
+
+.block {
+    transition: 1s all ease-in-out;
+}
+
+.block:hover {
+    background-color: #ffffff;
+    transition: 0.2s all ease-in-out;
+}
+
+/* Z-INDEX KORRIGIEREN */
+
+.square1 {
+    z-index: 1;
+}
+
+.block1 {
+    z-index: 2;
+}
+
+.block2 {
+    z-index: 2;
+}
+
+/* MEDIA QUERY TABLET*/
+
+@media (max-width: 1080px) {
+    .grid-container {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        transform: translate(-50%, -50%) rotate(-45deg) scale(80%);
+    }
+}
+
+/* MEDIA QUERY MOBILE*/
+
+@media (max-width: 640px) {
+    .grid-container {
+        position: absolute;
+        top: 55%;
+        left: 72%;
+        transform: translate(-50%, -50%) rotate(-90deg) scale(62%);
+    }
+
+    .block1 {
+        transform: rotate(90deg) translate(67px, -200px);
+    }
+
+    .block2 {
+        transform: rotate(90deg) translate(-67px, 67px);
+    }
+
+    .block3 {
+        transform: rotate(90deg) translate(-67px, 200px);
+    }
+
+    .square1 {
+        transform: translate(-267px, 0px);
+    }
+
+    .square2 {
+        transform: translate(133px, 133px);
+    }
+
+    .square3 {
+        transform: translate(267px, 0px);
+    }
+}
+
+/* MEDIA QUERY MOBILE KORREKTUR: IPHONE 14 PRO MAX */
+/* Hallo Hanna, meine Seite ist besonders auf das iPhone 14 Pro Max optimiert. */
+
+@media screen and (max-width: 640px),
+screen and (min-height: 800px) {
+    .grid-container {
+        top: 40%;
+    }
+}
