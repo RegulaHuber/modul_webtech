@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-
 body {
-    overflow: hidden;
     width: 100vw;
     height: 100vh;
-
 }
 
+html {
+    overflow: hidden;
+}
 
 
 /* SCHRIFTBLÖCKE */
@@ -35,15 +35,15 @@ body {
     border: 1px solid black;
 }
 
-.boxErweitern1{
+.boxErweitern1 {
     padding: 44px 60px;
 }
 
-.boxErweitern2{
+.boxErweitern2 {
     padding: 44px 65px;
 }
 
-.boxErweitern3{
+.boxErweitern3 {
     padding: 44px 44px;
 }
 
@@ -223,8 +223,6 @@ a {
         transform: scale(0.7);
     }
 }
-
-
 
 
 .yellow {
