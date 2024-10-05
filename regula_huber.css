@@ -51,14 +51,14 @@ body {
 .regula {
     animation-name: regula;
     animation-duration: 8s;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
 .huber {
     animation-name: huber;
     animation-duration: 8s;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
@@ -141,7 +141,7 @@ a {
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%) rotate(-45deg);
-    transition: ease all .5s;
+    transition: ease-in-out all .5s;
     /*sanfter Übergang von Desktop zu Mobile*/
 }
 
@@ -186,7 +186,7 @@ a {
 .block3 {
     background: linear-gradient(274deg, #529eb6, rgb(87, 63, 132));
     background-size: 300% 300%;
-    animation: verlaufAnimation 5s ease infinite;
+    animation: verlaufAnimation 5s ease-in-out infinite;
 
 }
 
@@ -207,23 +207,20 @@ a {
 }
 
 .vergroessern {
-    animation: vergroessern 5s ease infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    animation: vergroessern 10s ease-in-out infinite;
 }
 
 @keyframes vergroessern {
     0% {
-        transform: scale(1);
+        transform: scale(0.7);
     }
 
     50% {
-        transform: scale(0.3);
+        transform: scale(1);
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(0.7);
     }
 }
 
@@ -318,12 +315,12 @@ a {
 
 .flip-box-front {
     animation: flipAnimation 8s infinite;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
 }
 
 .flip-box-back {
     animation: flipAnimation 8s infinite;
-    animation-timing-function: ease;
+    animation-timing-function: ease-in-out;
     animation-delay: 4s;
 }
 
